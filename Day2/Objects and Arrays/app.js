@@ -123,7 +123,9 @@ console.log("person1: ", person1);
 console.log("person2: ", person2);
 */
 
-// Deep Copy Example
+
+/*
+// Shallow Copy with Nested Objects Example
 const person1 = {
     name: 'Mohan',
     city: 'Delhi',
@@ -142,3 +144,11 @@ person2.marks.math = 95; // This will affect person1 as well
 
 console.log("person1: ", person1);
 console.log("person2: ", person2);
+
+
+*/
+
+
+//----------------------------------------------------------
+
+

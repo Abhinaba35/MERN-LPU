@@ -1221,8 +1221,6 @@ const createUI = () =>{
         <h4>${elem.title}</h4>
         <p>${elem.completed ? "Done" : "Pending"} </p>
         `;
- 
-       // newDiv.innerHTML= "<h4>Hello</h4>";
        parent.append(newDiv);
     });
 };

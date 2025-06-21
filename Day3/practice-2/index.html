@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-2-App</title>
+    <style>
+        header{
+            text-align: center;
+        }
+        #root{
+            display: flex;
+            flex-wrap: wrap;
+            gap:2rem;
+            padding: 2rem;
+            justify-content: space-evenly;
+        }
+        .card{
+            border: 1.5px solid rgb(4, 19, 19);
+            background-color: rgb(243, 241, 158);
+            border-radius: 1rem;
+            padding: 1.25rem;
+        }
+        .image{
+            width: 20pc;
+            border: 1.5px solid black;
+        }
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0 0.3rem;
+}
+
+.rating {
+    font-weight: bold;
+    color: #5e1308;
+    font-size: 1rem;
+}
+
+.cuisine {
+    font-style: italic;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+
+    </style>
+</head>
+<body>
+    <header><h1>Recipe Store</h1></header>
+    <main id="root"></main>
+    <footer>&copy Abhinaba</footer>
+    <script src="./app.js"></script>
+</body>
+</html>

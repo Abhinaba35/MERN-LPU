@@ -2,20 +2,91 @@
 <html lang="en">
 
 <head>
+       
     <meta charset="UTF-8">
+       
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <title>Stopwatch</title>
+        <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #timer-cointainer {
+            text-align: center;
+            background-color: rgb(238, 229, 189);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+
+        #timer-text {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgb(243, 221, 52);
+            margin: 5px;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #dce4ee;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #root {
+            width: 80%;
+            max-width: 400px;
+            background-color: #9fc4f7;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            max-height: 200px;
+        }
+
+        #root p {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #444;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="timer-cointainer">
-        <p id="timer-text">00:00:00</p>
-        <button onclick="handleReset()">Reset</button>
-        <button onclick="handlePause()">Pause</button>
-        <button onclick="handleResume()">Resume</button>
-        <button onclick="handleLap()">Lap</button>
-    </div>
-    <div id="root"></div>
+        <div id="timer-cointainer">
+                <p id="timer-text">00:00:00</p>
+                <button onclick="handleReset()">Reset</button>
+                <button onclick="handlePause()">Pause</button>
+                <button onclick="handleResume()">Resume</button>
+                <button onclick="handleLap()">Lap</button>
+            </div>
+        <div id="root"></div>
 
     <script src="./timerApp.js"></script>
 </body>

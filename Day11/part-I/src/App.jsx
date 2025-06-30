@@ -1,58 +1,68 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const App = () => {
-/*
-  const getData = () => {
-    const response = fetch("https://dummyjson.com/users");
+  const [timeInSec, setTimeInSec] = useState(0);
+  const [laps , setLaps] = useState();
+  const [isTimerRunning, setIsTimerRunning] = useState(true);
 
-    response
-      .then((resp) => {
-        const pr2 = resp.json();
-        return pr2;
-      })
-      .catch((err) => {
-        console.log("error:", err.message);
-      })
-      .then((data) => {
-        console.log("data", data);
-      });
+  useEffect(() => {
+    console.log("Timer running state changed", isTimerRunning);
+
+    let intervalId = null;
+    if (isTimerRunning) {
+      intervalId = setInterval(() => {
+        // setTimeInSec((prev) => prev + 1);
+        setTimeInSec((prev) => {
+          return prev + 1;
+        });
+      }, 1000); //st1
+    }
+
+    return () => {
+      console.log("Cleaning up interval...");
+      clearInterval(intervalId);
+    };
+  }, [isTimerRunning]);
+
+  const handlePause = () => {
+    if (isTimerRunning) {
+      setIsTimerRunning(false);
+    }
   };
-*/
 
-const [usersList , setUsersList] = useState([]);
-console.log("--START--",usersList);
+  const handlePlay = () => {
+    if (!isTimerRunning) {
+      setIsTimerRunning(true);
+    }
+  };
 
-const getData = async()=> {
-  console.log("Inside getData");
-  const response = await fetch("https://dummyjson.com/users");
-  const data = await response.json();
-  console.log("data --> " , data);
-  const { users } = data;
-  setUsersList(users); 
-}
-
-console.log("before getData call");
- // getData();
-console.log("getData call");
-
-useEffect(()=>{
-  getData();
-},[]);
-
-//empty depenedency array ==>  it helps function call only once
+  const handleLap = () => {
+    console.log("Lpas: ", timeInSec);
+    setLaps((prev) => {
+      const temp = [...prev];
+      temp.push(timeInSec);
+      return temp; 
+    })
+  };
 
   return (
     <div>
-      <h1>Hello</h1>
-      {usersList.map((elem) => {
-        return (
-          <div>
-            <h3>{elem.firstName}</h3>
-          </div>
-        );
-      })}
+      <h2>00:00:{timeInSec.toString().padStart(2,"0")}</h2>
+      {isTimerRunning ? (
+        <button onClick={handlePause}>PAUSE</button>
+      ) : (
+        <button onClick={handlePlay}>PLAY</button>
+      )}
+
+      <button onClick={handleLap}>LAP</button>
+
+      <div>
+        {laps.map((elem ,idx) => {
+          return <p key={idx}>{elem}</p>
+        })}
+      </div>
     </div>
   );
-}
+};
 
-export default App
+export default App;

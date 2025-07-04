@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Likhilesh",
+        "city": "Delhi",
+        "score": 65,
+        "id": "cfbca7f4-1574-4e1c-a404-c043237c8e19"
+    },
+    {
+        "name": "Abhinaba",
+        "city": "Mejia",
+        "score": 65,
+        "id": "d317d402-f71c-4e09-beb2-75a6f2d18ee1"
+    },
+    {
+        "name": "Anuj",
+        "city": "Noida",
+        "score": 50,
+        "id": "25c56861-ea54-4967-ba57-3342db740e7e"
+    }
+]

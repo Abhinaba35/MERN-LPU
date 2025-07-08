@@ -25,13 +25,14 @@ const main = async () => {
   const resp3 = await getAllDataFromArrayFromFile(filePath);
   console.log("all data --> ", resp3);
 
-  // saveObjectToArrayInFile({ name: "Mohan", city: "Jaipur" }, filePath);
-  // const resp4 = await getAllDataFromArrayFromFile(filePath);
-  // console.log("all data --> ", resp4);
+  saveObjectToArrayInFile({ name: "Mohan", city: "Jaipur" }, filePath);
+  const resp4 = await getAllDataFromArrayFromFile(filePath);
+  console.log("all data --> ", resp4);
 
-  // deleteObjectFromArrayFromFile(1, filePath);
-  // const resp5 = await getAllDataFromArrayFromFile(filePath);
-  // console.log("all data --> ", resp5);
+  deleteObjectFromArrayFromFile(1, filePath);
+  const resp5 = await getAllDataFromArrayFromFile(filePath);
+  console.log("all data --> ", resp5);
+
 };
 
 main();

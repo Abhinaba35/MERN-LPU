@@ -83,6 +83,16 @@ const deleteObjectFromArrayFromFile = async (idx, filePath) => {
   //                       --> show the error in the console ---> object does not exists
   // if it is able to parse --> delete the object from the array
   //                        --> ::save the new array to the file::
+  const arr = await getAllDataFromArrayFromFile(filePath);
+  const objectToDelete = arr.find((elem) => elem.id === idx);
+  if (!objectToDelete) {
+    console.error("No Object found");
+    return arr;
+  }
+  const newArr = arr.filter((elem) => elem.id !== idx);
+  await saveArrayToFile(newArr, filePath);
+  return newArr;
+  
 };
 
 module.exports = {
